@@ -25,8 +25,9 @@ _We are also interested in establishing the look and feel of our visual brand ea
 - Practice following Scrum processes and performing Scrum roles
 - Practice communicating/working together as a team
 
-An optional starter scaffolding is provided [here.](https://gitlab.com/kenzie-academy/se/fe/final-projects/assessment---kwitter-frontend) An overview of the
-starting scaffolding architecture can be found in [this dependency graph](https://kenzie-academy.gitlab.io/se/fe/final-projects/assessment---kwitter-frontend/dependencygraph.html)
+An optional starter scaffolding is provided [here.](https://gitlab.com/kenzie-academy/se/fe/final-projects/assessment---kwitter-frontend)
+
+An overview of the starting scaffolding architecture can be found in `./dependencygraph.html`
 
 ## Getting Started...
 
