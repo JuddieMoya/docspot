@@ -45,6 +45,7 @@ class API {
     } catch (err) {
       // Instructor is logging you out because this failed
       helpMeInstructor(err);
+      return err;
     }
   }
 
@@ -53,6 +54,7 @@ class API {
       await this.axiosInstance.get("/auth/logout");
     } catch (err) {
       helpMeInstructor(err);
+      return err;
     }
   }
 }

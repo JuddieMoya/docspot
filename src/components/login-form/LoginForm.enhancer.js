@@ -3,7 +3,6 @@ import { login } from "../../redux/actions/auth";
 
 // https://react-redux.js.org/using-react-redux/connect-mapstate#connect-extracting-data-with-mapstatetoprops
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
   loading: state.auth.loading,
   error: state.auth.error,
 });
