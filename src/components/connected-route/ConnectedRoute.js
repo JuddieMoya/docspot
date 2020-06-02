@@ -3,6 +3,11 @@ import ProptTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
+/*
+ * ConnectedRoute is a component that renders Routes for you
+ * It uses the auth store in redux to determine if a route should be rendered
+ * or redirected else where based on the auth status
+ */
 export function ConnectedRoute({
   isProtected,
   redirectIfAuthenticated,
