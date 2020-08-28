@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import ProptTypes from "prop-types";
+import { useSelector, useDispatch } from "react-redux";
+import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 import "./LoginForm.css";
 
-export const LoginForm = ({ login, loading, error }) => {
-  // Not to be confused with "this.setState" in classes
+export const LoginForm = ({ login }) => {
+  const { loading, error } = useSelector((state) => ({
+    loading: state.auth.loading,
+    error: state.auth.error,
+  }));
+
+  const dispatch = useDispatch();
+
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -12,7 +19,7 @@ export const LoginForm = ({ login, loading, error }) => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    login(state);
+    dispatch(actions.login(state));
   };
 
   const handleChange = (event) => {
@@ -49,10 +56,4 @@ export const LoginForm = ({ login, loading, error }) => {
       {error && <p style={{ color: "red" }}>{error.message}</p>}
     </React.Fragment>
   );
-};
-
-LoginForm.propTypes = {
-  login: ProptTypes.func.isRequired,
-  loading: ProptTypes.bool,
-  error: ProptTypes.string,
 };

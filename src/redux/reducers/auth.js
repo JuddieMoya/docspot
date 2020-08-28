@@ -2,13 +2,13 @@ import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "../actions";
 
 // INITIAL STATE
 const INITIAL_STATE = {
-  isAuthenticated: false,
+  isAuthenticated: "",
   username: "",
   loading: false,
   error: "",
 };
 
-export const authReducer = (state = INITIAL_STATE, action) => {
+export const authReducer = (state = { ...INITIAL_STATE }, action) => {
   switch (action.type) {
     case LOGIN:
       return {

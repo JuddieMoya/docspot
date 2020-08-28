@@ -11,7 +11,7 @@ export const LOGOUT = "AUTH/LOGOUT";
  THUNKS: --> https://github.com/reduxjs/redux-thunk#whats-a-thunk
  If you need access to your store you may call getState()
 */
-export const login = (credentials) => async (dispatch, getState) => {
+const login = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: LOGIN });
     const payload = await api.login(credentials);
@@ -26,7 +26,7 @@ export const login = (credentials) => async (dispatch, getState) => {
   }
 };
 
-export const logout = () => async (dispatch, getState) => {
+const logout = () => async (dispatch, getState) => {
   try {
     // We do not care about the result of logging out
     // as long as it succeeds
@@ -39,3 +39,8 @@ export const logout = () => async (dispatch, getState) => {
   }
 };
 // END AUTH ACTIONS
+
+export const actions = {
+  login,
+  logout,
+};
