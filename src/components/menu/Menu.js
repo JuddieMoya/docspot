@@ -14,7 +14,9 @@ export const Menu = () => {
       <div id="menu-links">
         {isAuthenticated ? (
           <>
-            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/messagefeed">Messages</Link>
+            <Link to="/RecentlylikesImages<"> Trending</Link>
+            <Link to="/follwers">Feed</Link>
             <Link to="/" onClick={logout}>
               Logout
             </Link>
