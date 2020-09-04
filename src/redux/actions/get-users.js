@@ -1,4 +1,5 @@
 import getUsersReducer from '../reducers/users'
+import api from '../../utils/api'
 const redux = require('redux')
 const createStore = redux.createStore
 const applyMiddleware = redux.applyMiddleware
@@ -26,10 +27,9 @@ const fetUsersFailure= error =>{
         payload: error
     }
 }
-const fetchUsers =() =>{
+const fetchUsersAction =() =>{
     return function (dispatch){
         dispatch(fetUsersRequest())
-axios.get('https://kwitter-api.herokuapp.com/users')
 .then (response=>{
     const usersData =response.data.users.map(user => user.username)
 dispatch(fetUsersSuccess(usersData))
@@ -40,8 +40,5 @@ dispatch(fetUsersFailure(error.message))
     }
 }
 export const actions = {
-    fetchUsers
-  }
-const store = createStore(getUsersReducer, applyMiddleware(thunkMiddleware))
-store.subscribe(()=>{console.log(store.getState())})
-store.dispatch(fetchUsers())
+ fetchUsersAction
+}
