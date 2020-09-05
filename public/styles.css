@@ -1,0 +1,8 @@
+/*Sitewide styles here*/
+div.left {
+  /* styles for left side */
+  float: left;
+  border-right-style: solid;
+  border-right-width: 5px;
+  border-right-color: black;
+}

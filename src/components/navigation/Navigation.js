@@ -4,8 +4,9 @@ import {
   HomeScreen,
   ProfileScreen,
   NotFoundScreen,
-  MessageScreen,
+  Signup,
 } from "../../screens";
+import Messages from '../../screens/Messages';
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
 export const Navigation = () => (
@@ -27,7 +28,12 @@ export const Navigation = () => (
         exact
         isProtected
         path="/messagefeed"
-        component={MessageScreen}
+        component={Messages}
+      />
+      <ConnectedRoute
+        exact
+        path="/signup"
+        component={Signup}
       />
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
