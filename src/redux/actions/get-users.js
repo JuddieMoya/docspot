@@ -1,44 +1,21 @@
-import getUsersReducer from '../reducers/users'
-import api from '../../utils/api'
-const redux = require('redux')
-const createStore = redux.createStore
-const applyMiddleware = redux.applyMiddleware
-const thunkMiddleware = require('redux-thunk').default
+import api from "../../utils/api"
 export const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST'
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
 export const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
 
-const axios = require('axios')
+const fetchUsersAction = () => async (dispatch, getState) => {
+    try {
+        dispatch({ type: FETCH_USERS_REQUEST });
+        const payload = await api.fetchUsers();
+        dispatch({ type: FETCH_USERS_SUCCESS, payload });
+    } catch (err) {
+        dispatch({
+            type: FETCH_USERS_FAILURE,
+            payload: err.message,
+        });
+    }
+}
 
-const fetUsersRequest= ()=>{
-    return{
-        type: FETCH_USERS_REQUEST
-    }
-}
-const fetUsersSuccess= users =>{
-    return{
-        type: FETCH_USERS_SUCCESS,
-        payload: users
-    }
-}
-const fetUsersFailure= error =>{
-    return{
-        type: FETCH_USERS_FAILURE,
-        payload: error
-    }
-}
-const fetchUsersAction =() =>{
-    return function (dispatch){
-        dispatch(fetUsersRequest())
-.then (response=>{
-    const usersData =response.data.users.map(user => user.username)
-dispatch(fetUsersSuccess(usersData))
-})
-.catch(error =>{
-dispatch(fetUsersFailure(error.message))
-})
-    }
-}
 export const actions = {
- fetchUsersAction
+    fetchUsersAction,
 }

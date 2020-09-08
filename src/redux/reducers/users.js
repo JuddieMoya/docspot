@@ -28,6 +28,7 @@ const intialState= {
                     users: [],
                     error: action.payload
                 }
-        default: return {state}
+                default: return state
     }
 }
+export default getUsersReducer
