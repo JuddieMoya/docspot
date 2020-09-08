@@ -17,5 +17,5 @@ const fetchUsersAction = () => async (dispatch, getState) => {
 }
 
 export const actions = {
-    fetchUsersAction,
+    fetchUsersAction
 }
