@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // TODO: implement
 import { FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE,FETCH_USERNAME_REQUEST,FETCH_USERNAME_SUCCESS,FETCH_USERNAME_FAILURE } from '../actions'
 
@@ -52,3 +53,6 @@ const getUsersReducer = (state = intialState, action) => {
     }
 }
 export default getUsersReducer
+=======
+// TODO: implement
+>>>>>>> ellyBranchmessages

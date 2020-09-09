@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,9 +15,10 @@ export const Menu = () => {
       <div id="menu-links">
         {isAuthenticated ? (
           <>
-            
-           <Link to="/getusers">Get Users</Link>
-            <Link to="/messagefeed">Message Feed</Link>
+
+            <Link to="/messagefeed">Messages</Link>
+            <Link to="/RecentlylikesImages<"> Trending</Link>
+            <Link to="/getusers">Get Users</Link>
             <Link to="/" onClick={logout}>
               Logout
             </Link>
@@ -26,3 +28,4 @@ export const Menu = () => {
     </div>
   );
 };
+

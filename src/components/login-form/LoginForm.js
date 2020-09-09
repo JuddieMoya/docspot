@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 import "./LoginForm.css";
+import { Link } from "react-router-dom";
 
 export const LoginForm = ({ login }) => {
   const { loading, error } = useSelector((state) => ({
@@ -16,10 +17,12 @@ export const LoginForm = ({ login }) => {
     username: "",
     password: "",
   });
+  
 
   const handleLogin = (event) => {
     event.preventDefault();
     dispatch(actions.login(state));
+    
   };
 
   const handleChange = (event) => {
@@ -54,6 +57,7 @@ export const LoginForm = ({ login }) => {
       </form>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
+      <Link to="/signup"><button>Sign Up</button></Link>
     </React.Fragment>
   );
 };
