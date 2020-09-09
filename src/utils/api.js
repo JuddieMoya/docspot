@@ -65,7 +65,24 @@ class API {
       throw err;
     }
   }
-  async fetchUsername(username) {
+
+ 
+
+
+  async deleteMessage(id) {
+    try{
+      const res = await this.axiosInstance.delete(`/messages/${id}`);
+      return res;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+
+
+  async  fetchUsername(username) {
+
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
       return result;
@@ -92,14 +109,19 @@ class API {
       throw err;
     }
   }
-  // async getUsers() {
-  //   try {
-  //     return (await this.axiosInstance.get('/users'));
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     throw err;
-  //   }
-  // }
+
+
+
+  async addLike(id) {
+    try {
+      return (await this.axiosInstance.post(`/like/${id}`));
+    } catch (err) {
+      helpMeInstructor(err);
+      console.log(err)
+      throw(err);
+    }
+  }
+
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
