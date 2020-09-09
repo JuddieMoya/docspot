@@ -4,5 +4,5 @@ import { messagesReducer } from "./messages";
 
 export default combineReducers({
   auth: authReducer,
-  messsages: messagesReducer,
+  messages: messagesReducer,
 });

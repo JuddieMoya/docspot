@@ -1,3 +1,3 @@
-import MessageScreen from "../../screens/MessageScreen";
+import MessageScreen from "../../screens/Messages";
 
 export * from "./Navigation";
