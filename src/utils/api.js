@@ -77,6 +77,8 @@ class API {
     }
   }
 
+
+
   async getUsers() {
     try {
       return (await this.axiosInstance.get('/users'));
@@ -95,6 +97,7 @@ class API {
       throw(err);
     }
   }
+
 
   async addLike(id) {
     try {

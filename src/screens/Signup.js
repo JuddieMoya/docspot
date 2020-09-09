@@ -1,35 +1,44 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Api from '../utils/api';
+
+
 
 export const Signup = () => {
   const [username, setUsername] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [password, setPassword] = useState("");
+
   const [errorMessage, setErrorMessage] = useState('');
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault(e);
     try {
 
-      const result = await Api.createUser({ username, displayName, password })
+      const result = await Api.createUser({ username, displayName, password });
+
 
       // response good, redirect to the main page
       if (result.statusCode === 200) {
         // set window.location.pathname to the default path ('/')
-        window.location.pathname = '/';
-      }
-    } catch(e) {
-      setErrorMessage("Failed to create user.");
-      
-      console.log(errorMessage)
-    }
 
-  }
+        window.location.pathname = "/";
+      }
+    } catch (e) {
+      setErrorMessage("Failed to create user.");
+
+      console.log(errorMessage);
+    }
+  };
+
   return (
     <>
       <h1>Signup</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
+
         <label htmlFor="username">
           Username:
         </label>
@@ -53,10 +62,13 @@ export const Signup = () => {
         <input type="password" id="password" onChange={
           e => setPassword(e.target.value)
         }></input>
+
         <button type="submit">Submit</button>
         {errorMessage}
         <Link to="/">Back to Login</Link>
       </form>
     </>
-  )
-} 
+
+  );
+};
+

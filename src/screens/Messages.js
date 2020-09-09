@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getMessages } from "../redux/actions/messages";
@@ -27,7 +28,7 @@ function Messages(props) {
   };
 
   // need to call api within useEffect to work properly
-  // like the old componentDidMount functionality
+  // like the old componentDidMount functionality if you dont know what i mean go to mdn and read up on it 
   useEffect(() => {
     // call the fetch messages function
     fetchMessages();
@@ -79,10 +80,12 @@ function Messages(props) {
       <ul>
         {/* Conditional render based on isLoaded */}
         {isLoaded && m}
+
       </ul>
     </>
   );
 }
+
 
 export default Messages;
 // const mapStateToProps = (state) => {
@@ -97,6 +100,7 @@ export default Messages;
 //   mapStateToProps,
 //   {getMessages}
 // )(Messages);
+
 
 // const mapStateToProps = (state) => {
 //   return {
