@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getMessages } from "../redux/actions/messages";
