@@ -6,8 +6,8 @@ import { ProfilePicLoaderContainer } from "../components/";
 export const ProfileScreen = () => (
   <>
     <MenuContainer />
-    <ProfilePicLoaderContainer />
     <h2>Profile</h2>
+    <ProfilePicLoaderContainer />
     <GetUsernameContainer />
   </>
 );
