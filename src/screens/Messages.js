@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getMessages } from "../redux/actions/messages";
 import { Link } from 'react-router-dom';
 import Api from "../utils/api";
+import {PostMessages} from "../components/Post-Messages"
 
 function Messages(props) {
   const [messages, setMessages] = useState([]);
@@ -77,6 +78,7 @@ function Messages(props) {
     <>
       <h1>Kwitter Messages</h1>
       <Link to="/">Back to Home</Link>
+      <PostMessages/>
       <ul>
         {/* Conditional render based on isLoaded */}
         {isLoaded && m}
