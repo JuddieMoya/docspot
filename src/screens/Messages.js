@@ -123,9 +123,9 @@ function Messages(props) {
             );
           })}
         </span>
-        <Button id={message.id} onClick={addLike}>
+        <button className="btn btn-primary"id={message.id} onClick={addLike}>
           Like
-        </Button>{" "}
+        </button>{" "}
         {/* <button type="button" id={message.id} onClick={addLike}>
 
           Like
