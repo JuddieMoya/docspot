@@ -11,7 +11,9 @@ class API {
     const axiosInstance = axios.create({
       baseURL: "https://kwitter-api.herokuapp.com/",
       timeout: 30000,
-      headers: { Authorization: `Bearer ${getToken()}` },
+      headers: {
+        Authorization: `Bearer ${getToken()}`
+      },
     });
 
     // Add a request interceptor to attach a
@@ -28,14 +30,19 @@ class API {
 
     // Add a response interceptor
     axiosInstance.interceptors.response.use(
-      ({ data }) => data,
+      ({
+        data
+      }) => data,
       (error) => Promise.reject(error)
     );
 
     this.axiosInstance = axiosInstance;
   }
 
-  async login({ username, password }) {
+  async login({
+    username,
+    password
+  }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
         username,
@@ -66,12 +73,9 @@ class API {
     }
   }
 
- 
-
-
-  async deleteMessage(id) {
-    try{
-      const res = await this.axiosInstance.delete(`/messages/${id}`);
+  async deleteMessage(messageId) {
+    try {
+      const res = await this.axiosInstance.delete(`/messages/${messageId}`);
       return res;
     } catch (err) {
       helpMeInstructor(err);
@@ -79,10 +83,7 @@ class API {
     }
   }
 
-
-
-  async  fetchUsername(username) {
-
+  async fetchUsername(username) {
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
       return result;
@@ -110,18 +111,29 @@ class API {
     }
   }
 
-
-
   async addLike(id) {
     try {
-      return (await this.axiosInstance.post(`/like/${id}`));
+      console.log(typeof (id))
+      id = parseInt(id)
+      return await this.axiosInstance.post("/likes", {
+        "messageId": id
+
+      });
     } catch (err) {
       helpMeInstructor(err);
-      console.log(err)
-      throw(err);
+      console.log(err);
+      throw err;
     }
   }
-
+  async getOneMessage(messageId) {
+    try {
+      const data = await this.axiosInstance.get(`/messages/${messageId}`);
+      return data;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
