@@ -13,7 +13,7 @@ export const GetUsers = () => {
     dispatch(actions.fetchUsersAction());
   }, []);
 
-  console.log(state.users);
+  // console.log(state.users);
   return (
     <React.Fragment>
       <div>

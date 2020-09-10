@@ -78,10 +78,10 @@ class API {
     }
   }
 
-  async  uploadProfilePic(username) {
-
+  async  uploadProfilePic(username,image) {
+console.log(image)
     try {
-      const result = await this.axiosInstance.get(`/users/${username}/picture`);
+      const result = await this.axiosInstance.put(`/users/${username}/picture`,image);
       return result;
     } catch (err) {
       helpMeInstructor(err);

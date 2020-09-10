@@ -1,23 +1,34 @@
-import React , { useEffect, useState} from 'react'
-import { useSelector, useDispatch } from "react-redux";
-// import { actions } from "../../redux/actions/profile-pic-loader";
+import React, { useEffect, useState } from 'react'
+import {useDispatch } from "react-redux";
+import { actions } from "../../redux/actions/profile-pic-loader";
 // local state here store img in state
 
-export const ProfilePicLoader= ()=> {
- const [profilePic, setProfilePic] = useState()
-const fileSelectHandler = event =>{
-    setProfilePic({profilePic:event.target.files})
-}
-const fileUploadHandler = event =>{
-    console.log(profilePic);
-}
-   return( <>
-    <div>
-    <input type='file' onChange={fileSelectHandler}/> 
-    <button 
-    onClick={fileUploadHandler}
-    >Upload</button>
-    </div>
-    
+export const ProfilePicLoader = () => {
+    const [profilePic, setProfilePic] = useState()
+    const dispatch = useDispatch()
+    const fileSelectHandler = event => {
+        setProfilePic({ picture: event.target.files[0] })
+    }
+    const fileUploadHandler = event => {
+        event.preventDefault()
+        console.log(profilePic);
+        // test
+        const formData = new FormData()
+        formData.append('picture', profilePic.picture)
+        dispatch(actions.uploadPictureAction(formData))
+    }
+    return (<>
+
+        <div>
+        <form onSubmit={fileUploadHandler}>
+            <input type='file' name='picture' onChange={fileSelectHandler} />
+            <button
+            type='submit'
+            // disabled={loading}
+                // onClick={fileUploadHandler}
+            >Upload</button>
+        </form>
+        </div>
+
     </>)
 }
