@@ -11,15 +11,19 @@ function Messages(props) {
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
   const [isLoaded, setIsLoaded] = useState("false");
-
+  const [count, setCount] = useState(0);
+  const limit = 25;
   // fetch message from api using getmessages function
   const fetchMessages = async () => {
-    const response = await Api.getMessages();
+
+    const response = await Api.getMessages(count, limit);
 
     // if status is ok (200) set messages
     if (response.statusCode === 200) {
       setIsLoaded(true);
-      setMessages(response.messages);
+      
+      // setMessages with what we already have concatenated with the new ones
+      setMessages(messages.concat(response.messages));
     } else {
       // status code was bad
       setIsLoaded(true);
@@ -54,7 +58,7 @@ function Messages(props) {
       console.log("Added");
     }
     console.log(event)
-  getOneMessage(event);
+    getOneMessage(event);
   }
   console.log(messages);
 
@@ -71,44 +75,18 @@ function Messages(props) {
     }
     await fetchMessages();
   }
-  console.log(messages);
 
-
+  async function handleOnScroll() {
+    //scrollY is the current location of the top of the screen,
+    // innerHeight is not
+    // 2475 is the rough height of each message's height * 25
+    // 2400 is a rounded number to help the api call start sooner 
+    if(window.scrollY + window.innerHeight + (count * 2400) > 2475 * (count + 1)) {
+      fetchMessages();
+    }
+  }
   
-
-
-
-  // const m = () =>
-  //   messages?.map((message) => {
-  //     <ListGroup>
-  //       <ListGroup.Item>
-  //         {message.text}
-  //         <br />
-  //         <span>
-  //           Likes: {message.likes?.length || "None"}
-  //           <br />
-  //           {message.likes.map((like) => {
-  //             return (
-  //               <Link to={"/profiles/" + like.username}>{like.username}</Link>
-  //             );
-  //           })}
-  //         </span>
-  //         <button type="button" id={message.id} onClick={addLike}>
-  //           Like
-  //         </button>
-  //         <button
-  //           type="button"
-  //           id={message.id}
-  //           onClick={(evt) => {
-  //             remove(message.id);
-  //           }}
-  //         >
-  //           Delete
-  //         </button>
-  //       </ListGroup.Item>
-  //     </ListGroup>;
-  //   });
-  //make unordered list
+  window.addEventListener('scroll', handleOnScroll);
   const m = messages?.map((message) => (
     <ListGroup>
       <ListGroup.Item>
@@ -123,13 +101,9 @@ function Messages(props) {
             );
           })}
         </span>
-        <button className="btn btn-primary"id={message.id} onClick={addLike}>
+        <button className="btn btn-primary" id={message.id} onClick={addLike}>
           Like
         </button>{" "}
-        {/* <button type="button" id={message.id} onClick={addLike}>
-
-          Like
-        </button> */}
         <Button id={message.id}
           onClick={(evt) => {
             remove(message.id);
@@ -142,14 +116,14 @@ function Messages(props) {
   ));
 
   return (
-    <>
+    <div onScroll={handleOnScroll}>
       <h1>Kwitter Messages</h1>
       <Link to="/">Back to Home</Link>
       <ul>
         {/* Conditional render based on isLoaded */}
         {isLoaded && m}
       </ul>
-    </>
+    </div>
   );
 }
 

@@ -101,9 +101,9 @@ class API {
       throw err;
     }
   }
-  async getMessages() {
+  async getMessages(count, limit) {
     try {
-      const data = await this.axiosInstance.get("/messages");
+      const data = await this.axiosInstance.get(`/messages?limit=${limit}&offset=${count}`);
       return data;
     } catch (err) {
       helpMeInstructor(err);
