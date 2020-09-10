@@ -1,4 +1,5 @@
-import { MESSAGES, MESSAGES_SUCCESS, MESSAGES_FAILURE } from "../actions";
+import { MESSAGES, MESSAGES_SUCCESS, MESSAGES_FAILURE, POST_MESSAGE}  from "../actions";
+
 
 const INITIALSTATE = {
   messages: [],
@@ -26,6 +27,13 @@ export const messagesReducer = (state = INITIALSTATE, action) => {
         error: action.payload, // the  payload  is the  data that action sends to the reducer.
         loading: false,
       };
+      case POST_MESSAGE:
+      return{
+        ...INITIALSTATE,
+        messages: [action.payload, ...state.messages]
+        
+        
+      }
     default:
       return state;
   }

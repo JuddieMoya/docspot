@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import {useSelector} from "react-redux"
 import { connect } from "react-redux";
 import { getMessages } from "../redux/actions/messages";
 import { Link } from 'react-router-dom';
@@ -7,6 +8,8 @@ import Api from "../utils/api";
 import {PostMessages} from "../components/Post-Messages"
 
 function Messages(props) {
+
+ 
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState('');
   const [isLoaded, setIsLoaded] = useState('false');
@@ -36,6 +39,7 @@ function Messages(props) {
   }, [])
 
   async function deleteMessage(event) {
+    console.log(event.target.id)
     const response = await Api.deleteMessage(event.target.id);
     if (response.ok) {
       console.log("Deleted");
@@ -56,7 +60,7 @@ function Messages(props) {
     }
     await fetchMessages();
   }
-  console.log(messages);
+  
 
   // make unordered list
   const m = messages?.map(message =>
