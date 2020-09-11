@@ -14,7 +14,7 @@ export const GetUsers = () => {
   }, []);
 
   // console.log(state.users);
-  // simple change
+  // simple 
   return (
     <React.Fragment>
       <div>
