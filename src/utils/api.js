@@ -75,12 +75,15 @@ class API {
   }
   
   async  fetchUsername(username) {
-
-<<<<<<< src/utils/api.js
-    try {
+      try {
       const result = await this.axiosInstance.get(`/users/${username}`);
       return result;
-=======
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+  
 
  
   async deleteMessage(id) {
@@ -89,14 +92,11 @@ class API {
       const res = await this.axiosInstance.delete(`/messages/${id}`);
       console.log(res)
         return res;
->>>>>>> src/utils/api.js
-    } catch (err) {
+     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
   }
-
-<<<<<<< src/utils/api.js
   async  uploadProfilePic(username,image) {
 console.log(image)
     try {
@@ -109,10 +109,9 @@ console.log(image)
   }
 
 
-  async deleteMessage(id) {
-=======
-  async fetchUsername(username) {
->>>>>>> src/utils/api.js
+
+
+  async fetchUsername(id) {
     try {
       const res = await this.axiosInstance.delete(`/messages/${id}`);
       return res;
@@ -142,8 +141,6 @@ console.log(image)
   }
 
   async addLike(id) {
-<<<<<<< src/utils/api.js
-=======
     try {
       console.log(typeof (id))
       id = parseInt(id)
@@ -170,18 +167,15 @@ console.log(image)
 
   async postMessages(messages) {
     console.log(messages)
->>>>>>> src/utils/api.js
     try {
       const data = await this.axiosInstance.post(`/messages`, {text:messages})
       return data;
     } catch (err) {
       helpMeInstructor(err);
-<<<<<<< src/utils/api.js
       console.log(err)
       throw (err);
-=======
-      throw err;
->>>>>>> src/utils/api.js
+
+ 
     }
   }
 

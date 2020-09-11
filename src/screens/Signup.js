@@ -62,7 +62,7 @@ export const Signup = () => {
         <input type="password" id="password" onChange={
           e => setPassword(e.target.value)
         }></input>
-
+          <br />
         <button type="submit">Submit</button>
         {errorMessage}
         <Link to="/">Back to Login</Link>
