@@ -43,9 +43,9 @@ function Messages(props) {
     fetchMessages();
   }, []);
 
-  async function deleteMessage(event) {
-    console.log(event.target.id)
-    const response = await Api.deleteMessage(event.target.id);
+  async function deleteMessage(id) {
+    console.log(id)
+    const response = await Api.deleteMessage(id);
     if (response.ok) {
       console.log("Deleted");
     } else {
@@ -67,11 +67,6 @@ function Messages(props) {
     getOneMessage(event);
   }
   
-
-  const remove = (messageId) => {
-    console.log("this deletes");
-  };
-
   async function getOneMessage(event) {
     const response = await Api.getOneMessage(event.target.id);
     if (response.ok) {
@@ -111,8 +106,8 @@ function Messages(props) {
           Like
         </button>{" "}
         <Button id={message.id}
-          onClick={(evt) => {
-            remove(message.id);
+          onClick={() => {
+            deleteMessage(message.id);
           }}
         >
           Delete
