@@ -11,7 +11,9 @@ class API {
     const axiosInstance = axios.create({
       baseURL: "https://kwitter-api.herokuapp.com/",
       timeout: 30000,
-      headers: { Authorization: `Bearer ${getToken()}` },
+      headers: {
+        Authorization: `Bearer ${getToken()}`
+      },
     });
 
     // Add a request interceptor to attach a
@@ -28,14 +30,19 @@ class API {
 
     // Add a response interceptor
     axiosInstance.interceptors.response.use(
-      ({ data }) => data,
+      ({
+        data
+      }) => data,
       (error) => Promise.reject(error)
     );
 
     this.axiosInstance = axiosInstance;
   }
 
-  async login({ username, password }) {
+  async login({
+    username,
+    password
+  }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
         username,
@@ -69,15 +76,27 @@ class API {
   
   async  fetchUsername(username) {
 
+<<<<<<< src/utils/api.js
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
       return result;
+=======
+
+ 
+  async deleteMessage(id) {
+    console.log(id, "here")
+    try{
+      const res = await this.axiosInstance.delete(`/messages/${id}`);
+      console.log(res)
+        return res;
+>>>>>>> src/utils/api.js
     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
   }
 
+<<<<<<< src/utils/api.js
   async  uploadProfilePic(username,image) {
 console.log(image)
     try {
@@ -91,6 +110,9 @@ console.log(image)
 
 
   async deleteMessage(id) {
+=======
+  async fetchUsername(username) {
+>>>>>>> src/utils/api.js
     try {
       const res = await this.axiosInstance.delete(`/messages/${id}`);
       return res;
@@ -109,9 +131,9 @@ console.log(image)
       throw err;
     }
   }
-  async getMessages() {
+  async getMessages(count, limit) {
     try {
-      const data = await this.axiosInstance.get("/messages");
+      const data = await this.axiosInstance.get(`/messages?limit=${limit}&offset=${count}`);
       return data;
     } catch (err) {
       helpMeInstructor(err);
@@ -120,16 +142,51 @@ console.log(image)
   }
 
   async addLike(id) {
+<<<<<<< src/utils/api.js
+=======
     try {
-      return (await this.axiosInstance.post(`/like/${id}`));
+      console.log(typeof (id))
+      id = parseInt(id)
+      return await this.axiosInstance.post("/likes", {
+        "messageId": id
+
+      });
     } catch (err) {
       helpMeInstructor(err);
+      console.log(err);
+      throw err;
+    }
+  }
+  async getOneMessage(messageId) {
+    try {
+      const data = await this.axiosInstance.get(`/messages/${messageId}`);
+      return data;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+
+  async postMessages(messages) {
+    console.log(messages)
+>>>>>>> src/utils/api.js
+    try {
+      const data = await this.axiosInstance.post(`/messages`, {text:messages})
+      return data;
+    } catch (err) {
+      helpMeInstructor(err);
+<<<<<<< src/utils/api.js
       console.log(err)
       throw (err);
+=======
+      throw err;
+>>>>>>> src/utils/api.js
     }
   }
 
 }
+
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 
