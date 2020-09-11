@@ -63,6 +63,7 @@ class API {
       throw err;
     }
   }
+
   async fetchUsers() {
     try {
       const result = await this.axiosInstance.get("/users");
@@ -72,7 +73,14 @@ class API {
       throw err;
     }
   }
+  
+  async  fetchUsername(username) {
 
+<<<<<<< src/utils/api.js
+    try {
+      const result = await this.axiosInstance.get(`/users/${username}`);
+      return result;
+=======
 
  
   async deleteMessage(id) {
@@ -81,21 +89,39 @@ class API {
       const res = await this.axiosInstance.delete(`/messages/${id}`);
       console.log(res)
         return res;
+>>>>>>> src/utils/api.js
     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
   }
 
-  async fetchUsername(username) {
+<<<<<<< src/utils/api.js
+  async  uploadProfilePic(username,image) {
+console.log(image)
     try {
-      const result = await this.axiosInstance.get(`/users/${username}`);
+      const result = await this.axiosInstance.put(`/users/${username}/picture`,image);
       return result;
     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
   }
+
+
+  async deleteMessage(id) {
+=======
+  async fetchUsername(username) {
+>>>>>>> src/utils/api.js
+    try {
+      const res = await this.axiosInstance.delete(`/messages/${id}`);
+      return res;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   async createUser(payload) {
     try {
       return await this.axiosInstance.post("/users", payload);
@@ -116,6 +142,8 @@ class API {
   }
 
   async addLike(id) {
+<<<<<<< src/utils/api.js
+=======
     try {
       console.log(typeof (id))
       id = parseInt(id)
@@ -142,12 +170,18 @@ class API {
 
   async postMessages(messages) {
     console.log(messages)
+>>>>>>> src/utils/api.js
     try {
       const data = await this.axiosInstance.post(`/messages`, {text:messages})
       return data;
     } catch (err) {
       helpMeInstructor(err);
+<<<<<<< src/utils/api.js
+      console.log(err)
+      throw (err);
+=======
       throw err;
+>>>>>>> src/utils/api.js
     }
   }
 

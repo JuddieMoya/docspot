@@ -1,0 +1,1 @@
+export { ProfilePicLoader as ProfilePicLoaderContainer } from "./ProfilePicLoader"
