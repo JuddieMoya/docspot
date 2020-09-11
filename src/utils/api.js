@@ -73,10 +73,14 @@ class API {
     }
   }
 
-  async deleteMessage(messageId) {
-    try {
-      const res = await this.axiosInstance.delete(`/messages/${messageId}`);
-      return res;
+
+ 
+  async deleteMessage(id) {
+    console.log(id, "here")
+    try{
+      const res = await this.axiosInstance.delete(`/messages/${id}`);
+      console.log(res)
+        return res;
     } catch (err) {
       helpMeInstructor(err);
       throw err;
@@ -134,7 +138,21 @@ class API {
       throw err;
     }
   }
+
+
+  async postMessages(messages) {
+    console.log(messages)
+    try {
+      const data = await this.axiosInstance.post(`/messages`, {text:messages})
+      return data;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
 }
+
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 
