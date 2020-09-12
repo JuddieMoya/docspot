@@ -7,7 +7,7 @@ export const ProfileScreen = () => (
   <>
     <MenuContainer />
     <h2>Profile</h2>
-    <ProfilePicLoaderContainer />
     <GetUsernameContainer />
+    <ProfilePicLoaderContainer />
   </>
 );
