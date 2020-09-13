@@ -3,16 +3,16 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE,
-  FETCH_USERNAME_REQUEST,
-  FETCH_USERNAME_SUCCESS,
-  FETCH_USERNAME_FAILURE,
+  // FETCH_USERNAME_REQUEST,
+  // FETCH_USERNAME_SUCCESS,
+  // FETCH_USERNAME_FAILURE,
 } from "../actions";
 
 const intialState = {
   loading: false,
   users: [],
   error: "",
-  currentUser: {},
+  // currentUser: [],
 };
 
 const getUsersReducer = (state = intialState, action) => {
@@ -36,25 +36,25 @@ const getUsersReducer = (state = intialState, action) => {
         users: [],
         error: action.payload,
       };
-    case FETCH_USERNAME_REQUEST:
-      return {
-        ...state,
-        loading: true,
-      };
-    case FETCH_USERNAME_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        currentUser: action.payload,
-        error: "",
-      };
-    case FETCH_USERNAME_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        currentUser: [],
-        error: action.payload,
-      };
+    // case FETCH_USERNAME_REQUEST:
+    //   return {
+    //     ...state,
+    //     loading: true,
+    //   };
+    // case FETCH_USERNAME_SUCCESS:
+    //   return {
+    //     ...state,
+    //     loading: false,
+    //     currentUser: action.payload,
+    //     error: "",
+    //   };
+    // case FETCH_USERNAME_FAILURE:
+    //   return {
+    //     ...state,
+    //     loading: false,
+    //     currentUser: [],
+    //     error: action.payload,
+    //   };
     default:
       return state;
   }

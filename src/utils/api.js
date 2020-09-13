@@ -74,18 +74,15 @@ class API {
     }
   }
   
-  async  fetchUsername(username) {
+  async  fetchCurrentUser(username) {
       try {
       const result = await this.axiosInstance.get(`/users/${username}`);
-      return result;
+      return result
     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
-  }
-  
-
- 
+  } 
   async deleteMessage(id) {
     console.log(id, "here")
     try{
