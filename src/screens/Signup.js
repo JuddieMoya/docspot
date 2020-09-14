@@ -36,7 +36,7 @@ export const Signup = () => {
 
   return (
     <>
-      <h1>Signup</h1>
+      <h1 style={{color:'white'}}>Signup</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
 
         <label htmlFor="username">
@@ -63,9 +63,9 @@ export const Signup = () => {
           e => setPassword(e.target.value)
         }></input>
           <br />
-        <button type="submit">Submit</button>
+        <button style={{backgroundColor: 'grey',color:'white'}} type="submit">Submit</button>
         {errorMessage}
-        <Link to="/">Back to Login</Link>
+        <button style={{backgroundColor: 'grey',margin: '5px'}}><Link  style={{color: 'white'}} to="/">Back to Login</Link></button>
       </form>
     </>
 
