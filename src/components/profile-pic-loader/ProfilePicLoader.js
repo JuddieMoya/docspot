@@ -29,3 +29,4 @@ export const ProfilePicLoader = () => {
 
     </>)
 }
+export default ProfilePicLoader

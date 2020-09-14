@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/get-username";
-import defaultImage from './img/broken.png'
+import defaultImage from '../get-users/img/broken.png'
+import ProfilePicLoader from '../profile-pic-loader/ProfilePicLoader'
 // import "./GetUsername.css";
 const PHOTO_URL = username => `https://kwitter-api.herokuapp.com${username}`
 export const GetUsername = () => {
@@ -13,7 +14,6 @@ export const GetUsername = () => {
     }, []);
     console.log(state)
     if(state.getUsername.currentUser.user.pictureLocation!==null){
-       
     return(
         <>
         {state.getUsername.currentUser&&(
@@ -26,7 +26,7 @@ export const GetUsername = () => {
         </div>
         )}
         </>
-    ) 
+    )
     }else{
         return(
         <div>
@@ -35,8 +35,10 @@ export const GetUsername = () => {
         alt='profile pic'
         src = {defaultImage}
         />
+        <ProfilePicLoader/>
         </div>)
         
 
     }
+
 }
