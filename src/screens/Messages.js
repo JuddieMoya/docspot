@@ -15,7 +15,7 @@ function Messages(props) {
  
   const [messages, setMessages] = useState([]);
   const [error, setError] = useState("");
-  const [isLoaded, setIsLoaded] = useState("false");
+  const [isLoaded, setIsLoaded] = useState(false);
   const [count, setCount] = useState(0);
   const limit = 25;
   // fetch message from api using getmessages function
@@ -91,7 +91,7 @@ function Messages(props) {
   const m = messages?.map((message) => (
     <ListGroup>
       <ListGroup.Item>
-        {message.text}
+        <Link to={`../msg/${message.id}`}>{message.text}</Link>
         <br />
         <span>
           Likes: {message.likes?.length || "None"}
