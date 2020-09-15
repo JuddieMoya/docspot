@@ -8,6 +8,7 @@ import {
   Signup,GetUsersScreen,
 } from "../../screens";
 import Messages from '../../screens/Messages';
+import Message from '../../screens/Message';
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
 export const Navigation = () => (
@@ -30,6 +31,12 @@ export const Navigation = () => (
         isProtected
         path="/messagefeed"
         component={Messages}
+      />
+      <ConnectedRoute
+        exact
+        isProtected
+        path="/msg/:id"
+        component={Message}
       />
       <ConnectedRoute
         exact

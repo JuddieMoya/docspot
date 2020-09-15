@@ -73,31 +73,31 @@ class API {
       throw err;
     }
   }
-  
-  async  fetchCurrentUser(username) {
-      try {
+
+  async fetchCurrentUser(username) {
+    try {
       const result = await this.axiosInstance.get(`/users/${username}`);
       return result
     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
-  } 
+  }
   async deleteMessage(id) {
     console.log(id, "here")
-    try{
+    try {
       const res = await this.axiosInstance.delete(`/messages/${id}`);
       console.log(res)
-        return res;
-     } catch (err) {
+      return res;
+    } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
   }
-  async  uploadProfilePic(username,image) {
-console.log(image)
+  async uploadProfilePic(username, image) {
+    console.log(image)
     try {
-      const result = await this.axiosInstance.put(`/users/${username}/picture`,image);
+      const result = await this.axiosInstance.put(`/users/${username}/picture`, image);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -127,6 +127,17 @@ console.log(image)
       throw err;
     }
   }
+
+  async deleteUser(username) {
+    try {
+      return await this.axiosInstance.delete(`/users/${username}`);
+    } catch (err) {
+      helpMeInstructor(err);
+      console.log(err);
+      throw err;
+    }
+  }
+
   async getMessages(count, limit) {
     try {
       const data = await this.axiosInstance.get(`/messages?limit=${limit}&offset=${count}`);
@@ -160,19 +171,16 @@ console.log(image)
       throw err;
     }
   }
-
-
+  
   async postMessages(messages) {
     console.log(messages)
     try {
-      const data = await this.axiosInstance.post(`/messages`, {text:messages})
+      const data = await this.axiosInstance.post(`/messages`, { text: messages })
       return data;
     } catch (err) {
       helpMeInstructor(err);
       console.log(err)
       throw (err);
-
- 
     }
   }
 
