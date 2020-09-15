@@ -20,7 +20,7 @@ export const GetUsername = () => {
         <h1>{state.auth.username}</h1>
         <img
         alt='profile pic'
-        src = {PHOTO_URL(state.getUsername.currentUser.user.pictureLocation)}
+        src = {PHOTO_URL(state?.getUsername?.currentUser?.user?.pictureLocation || '/default')}
         />
         </div>
         )}
