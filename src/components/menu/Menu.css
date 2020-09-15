@@ -1,21 +1,24 @@
 
 #menu {
-  background-color: lightskyblue;
+  background-color:rgb(27, 131, 181);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
+  color: white
 }
 
 #menu-links {
   display: flex;
-  padding-left: 1em;
+  justify-content: center;
+  align-items: center;
 }
-
 #menu-links a {
   padding-right: 0.5em;
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
+}
+button.kwitter-button{
+  position: relative;
+  top:50px;
+  left: 10px;
+  border-radius: 10%;
 }
