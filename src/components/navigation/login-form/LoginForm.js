@@ -34,7 +34,7 @@ export const LoginForm = ({ login }) => {
   return (
     <React.Fragment>
       <form id="login-form" onSubmit={handleLogin}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username" style={{fontWeight:'bold', marginTop:'5px'}}>Username</label>
         <input
           type="text"
           name="username"
@@ -43,7 +43,7 @@ export const LoginForm = ({ login }) => {
           required
           onChange={handleChange}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" style={{fontWeight:'bold', marginTop:'5px'}}>Password</label>
         <input
           type="password"
           name="password"
@@ -51,13 +51,13 @@ export const LoginForm = ({ login }) => {
           required
           onChange={handleChange}
         />
-        <button type="submit" disabled={loading}>
+        <button style= {{backgroundColor:'gray',color:'white',marginTop:"5px"}} type="submit" disabled={loading}>
           Login
         </button>
       </form>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
-      <Link to="/signup"><button>Sign Up</button></Link>
+      <Link to="/signup"><button style= {{backgroundColor:'gray',color:'white',marginTop:"5px"}}>Sign Up</button></Link>
     </React.Fragment>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/profile-pic-loader";
-// local state here store img in state
 
 export const ProfilePicLoader = () => {
     const [profilePic, setProfilePic] = useState()
@@ -17,18 +16,17 @@ export const ProfilePicLoader = () => {
         formData.append('picture', profilePic.picture)
         dispatch(actions.uploadPictureAction(formData))
     }
-    return (<>
-
+    return (
+    <>
         <div>
         <form onSubmit={fileUploadHandler}>
             <input type='file' name='picture' onChange={fileSelectHandler} />
             <button
             type='submit'
-            // disabled={loading}
-                // onClick={fileUploadHandler}
             >Upload</button>
         </form>
         </div>
 
     </>)
 }
+export default ProfilePicLoader
