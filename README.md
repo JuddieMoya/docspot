@@ -47,3 +47,27 @@ An overview of the starting scaffolding architecture can be found in `./dependen
 2. Scrum board - this shows your scrum board which has tickets with descriptions and assignees. it could be a trello board or a gitlab/github project board or similar.
 3. Retrospective board or notes - show that your team discussed how to improve its process through notes about what went well/what went poorly/action items.
    It could be general notes or a funretro.io board.
+
+//  Retrospective board or notes - show that your team discussed how to improve its process through notes about what went well/what went poorly/action items.
+   It could be general notes or a funretro.io board.
+
+
+elly product owner 
+worked on 6 end points
+and the advance feature.
+jacob worked on 3 
+elly  did her part alone.
+ This project was Challenging not only becuase of the task but also because the support system was not fully there within the group. 
+it felt  comprised of two people  jacob and myself.  
+
+The other two team memebers barely communicated and ignore the countless reach outs, so I am not impressed with their work ethic because they didnt even try.
+
+
+
+The code is laggy  and thats annoying, but I  did the best that I  could and 
+mel did create message with help from suri and other  students  outside the group, eventhough Jacob and I(elly) offered helped countless of times, her communcation wasn't  there.
+
+why did she choose not to communicate? that is beyond me.
+
+Jen is lost cause. My team wasn't a team and if I  and jacob  didn't do what we  did  we would've been asol.
+
