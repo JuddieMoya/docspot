@@ -9,7 +9,7 @@ class API {
       https://create-react-app.dev/docs/adding-custom-environment-variables/
     */
     const axiosInstance = axios.create({
-      baseURL: "https://kwitter-api.herokuapp.com/",
+      baseURL: "https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?",
       timeout: 30000,
       headers: {
         Authorization: `Bearer ${getToken()}`
@@ -83,10 +83,10 @@ class API {
       throw err;
     }
   }
-  async deleteMessage(id) {
+  async lang(id) {
     console.log(id, "here")
     try {
-      const res = await this.axiosInstance.delete(`/messages/${id}`);
+      const res = await this.axiosInstance(`/lang/${id}`);
       console.log(res)
       return res;
     } catch (err) {
@@ -108,9 +108,9 @@ class API {
 
 
 
-  async fetchUsername(id) {
+  async fetchUsername() {
     try {
-      const res = await this.axiosInstance.delete(`/messages/${id}`);
+      const res = await this.axiosInstance.delete(`/profile/`);
       return res;
     } catch (err) {
       helpMeInstructor(err);
@@ -138,9 +138,9 @@ class API {
     }
   }
 
-  async getMessages(count, limit) {
+  async sex(count, limit) {
     try {
-      const data = await this.axiosInstance.get(`/messages?limit=${limit}&offset=${count}`);
+      const data = await this.axiosInstance.get(`/sex?limit=${limit}&offset=${count}`);
       return data;
     } catch (err) {
       helpMeInstructor(err);
@@ -148,11 +148,11 @@ class API {
     }
   }
 
-  async addLike(id) {
+  async tobaccoUse(id) {
     try {
       console.log(typeof (id))
       id = parseInt(id)
-      return await this.axiosInstance.post("/likes", {
+      return await this.axiosInstance.post("/tobaccoUse", {
         "messageId": id
 
       });
@@ -162,9 +162,9 @@ class API {
       throw err;
     }
   }
-  async getOneMessage(messageId) {
+  async sexuallyActive(profile) {
     try {
-      const data = await this.axiosInstance.get(`/messages/${messageId}`);
+      const data = await this.axiosInstance.get(`/profile/`);
       return data;
     } catch (err) {
       helpMeInstructor(err);
@@ -172,10 +172,10 @@ class API {
     }
   }
   
-  async postMessages(messages) {
-    console.log(messages)
+  async pregnant(profile) {
+    console.log(profile)
     try {
-      const data = await this.axiosInstance.post(`/messages`, { text: messages })
+      const data = await this.axiosInstance.post(`/profile`, {})
       return data;
     } catch (err) {
       helpMeInstructor(err);

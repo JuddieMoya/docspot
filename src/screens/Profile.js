@@ -11,8 +11,7 @@ export const ProfileScreen = () => {
     // and await its response
     await Api.deleteUser(window.location.pathname.split('/')[2]);
 
-    //after getting response, navigate back to homescreen;
-    // since user doesn't exist anymore the browser will be logged out
+   
     window.location.pathname = '/';
   }
 
@@ -20,10 +19,32 @@ export const ProfileScreen = () => {
     <MenuContainer />
     <h2>Profile</h2>
     <GetUsernameContainer />
-    <button type="button" className="btn btn-primary"
+    <button type="button" className=""
     onClick={deleteUser}>
       Delete User
     </button>
+    <form>
+            
+                <label>age</label>
+                <input type="number"></input>
+                <br/>
+                <label>sex</label>
+                <input type="checkbox" id="patient1" name="patient2" value="Female"/>
+                <label for="patient1"> Female</label>
+               
+                <input type="checkbox" id="patient2" name="patient2" value="Male"/>
+                <label for="patient2"> Male </label>
+                <br/>
+                <label>tobaccoUse</label>
+                <input type="checkbox" id="tobaccoUse" name="tobaccoUse" value=" Yes"/>
+                <label for="tobaccoUse"> Yes </label>
+                <input type="checkbox" id="tobaccoUse" name="tobaccoUse" value=" No"/>
+                <label for="tobaccoUse"> No</label>
+                <br/>
+                <label>Email</label>
+                <input type="email"></input>
+               
+            </form>
     <ProfilePicLoaderContainer />
   </>)
   };

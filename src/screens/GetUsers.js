@@ -7,7 +7,7 @@ export const GetUsersScreen = () => (
   <>
     <Card.Title 
     style={{textAlign: 'center',
-            backgroundColor: "rgb(24, 131, 181)",
+            backgroundColor: "white)",
             color:'white'
     }}>
       100 Newest Users

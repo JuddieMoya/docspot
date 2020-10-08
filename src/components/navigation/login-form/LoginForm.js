@@ -51,13 +51,13 @@ export const LoginForm = ({ login }) => {
           required
           onChange={handleChange}
         />
-        <button style= {{backgroundColor:'gray',color:'white',marginTop:"5px"}} type="submit" disabled={loading}>
+        <button style= {{backgroundColor:'white',color:'Black',marginTop:"5px"}} type="submit" disabled={loading}>
           Login
         </button>
       </form>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
-      <Link to="/signup"><button style= {{backgroundColor:'gray',color:'white',marginTop:"5px"}}>Sign Up</button></Link>
+      <Link to="/signup"><button style= {{backgroundColor:'white',color:'black',marginTop:"5px"}}>Sign Up</button></Link>
     </React.Fragment>
   );
 };

@@ -2,6 +2,7 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import {
+  TitleScreen,
   HomeScreen,
   ProfileScreen,
   NotFoundScreen,
@@ -12,8 +13,18 @@ import Message from '../../screens/Message';
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
 export const Navigation = () => (
+  
+  <>
+  
   <BrowserRouter>
     <Switch>
+    <ConnectedRoute
+        exact
+        path="/"
+        component={TitleScreen}
+      />
+
+      
       <ConnectedRoute
         exact
         path="/"
@@ -51,5 +62,7 @@ export const Navigation = () => (
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
+ 
+  </>
 );
 

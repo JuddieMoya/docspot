@@ -118,7 +118,7 @@ function Messages(props) {
 
   return (
     <div onScroll={handleOnScroll}>
-      <h1>Kwitter Messages</h1>
+      <h1>Find A Doctor</h1>
       <Link to="/">Back to Home</Link>
       <PostMessages/>
       <ul>
@@ -130,22 +130,3 @@ function Messages(props) {
 }
 
 export default Messages;
-// const mapStateToProps = (state) => {
-//   return {
-//     ...state
-//   }
-// }
-
-// const mapDispatchToProps = { messKages }
-
-// export default connect(
-//   mapStateToProps,
-//   {getMessages}
-// )(Messages);
-
-// const mapStateToProps = (state) => {
-//   return {
-//     messages: state.messages.messages,
-//   };
-// };
-//ok

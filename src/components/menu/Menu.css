@@ -1,6 +1,6 @@
 
 #menu {
-  background-color:rgb(27, 131, 181);
+  background-color:rgb(6, 8, 51);
   display: flex;
   color: white
 }
@@ -16,9 +16,9 @@
   text-decoration: underline;
   cursor: pointer;
 }
-button.kwitter-button{
+button.DocSpot-button{
   position: relative;
   top:50px;
   left: 10px;
-  border-radius: 10%;
+  border-radius: 1%;
 }

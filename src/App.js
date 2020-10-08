@@ -6,12 +6,12 @@ import configureStore from "./redux/configureStore";
 
 const { store, persistor } = configureStore();
 
-const KWITTER = {
+const DocSpot = {
   store,
   persistor,
 };
 
-window.KWITTER = KWITTER;
+window.DocSpot = DocSpot;
 
 export const App = () => (
   <Provider store={store}>

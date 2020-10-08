@@ -12,28 +12,31 @@ export const Menu = () => {
   const logout = () => dispatch(actions.logout());
   return (
     <Card id="menu">
-      <button className='kwitter-button' style={{
-        textAlign: 'center',
+      <button className='DocSpot-Button' style={{
+        textAlign: 'left',
         fontSize:'25px',
-        width:'50px',
-        height:'50px',
-        backgroundColor: 'white',
-      }}><Link  style={{color: 'rgb(13, 162, 223)'}} to="/">K</Link></button>
+        width:'125px',
+        height:'80px',
+        backgroundColor: 'Black',
+      }}><Link  style={{color: 'white'}} to="/">DocSpot</Link></button>
       <Card.Title id= 'menu-title'
       style={{fontSize: '45px',
-              textAlign: 'center'
+              textAlign: 'left'
                
       }}>
-        Kwitter</Card.Title>
+        </Card.Title>
       <div id="menu-links">
-        {isAuthenticated ? (
+        
           <Nav>
-<button style={{backgroundColor: 'grey', margin:'5px'}}><Link style={{color: 'white'}}to="/messagefeed">Messages</Link></button>
-<button style={{backgroundColor: 'grey', margin:'5px'}}><Link style={{color: 'white'}}to="/RecentlylikesImages<"> Trending</Link></button>
-<button style={{backgroundColor: 'grey', margin:'5px'}}><Link style={{color: 'white'}}to="/getusers">Get Users</Link></button>
-<button style={{backgroundColor: 'grey', margin:'5px'}}><Link style={{color: 'white'}}to="/" onClick={logout}>Logout</Link></button>
+<Link style={{color: 'white', margin: '20px'}}to="/FindDoctor"> Find a Doctor</Link>
+<hr/>
+<Link style={{color: ' white ', margin: '20px'}}to="/FindHospital<">Find a Hospital</Link>
+<Link style={{color: 'white', margin: '20px'}}to="/health ">Health A-Z</Link>
+
+{/* <Link style={{color: 'white', margin: '20px'}}to="/" onClick={logout}>Logout</Link> */}
+
           </Nav>
-        ) : null}
+    
       </div>
     </Card>
   );

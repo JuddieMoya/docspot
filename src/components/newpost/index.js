@@ -1,1 +1,0 @@
-export { PostForm as PostFormContainer } from "./PostForm";
