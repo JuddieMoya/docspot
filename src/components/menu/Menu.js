@@ -29,11 +29,11 @@ export const Menu = () => {
         
           <Nav>
 <Link style={{color: 'white', margin: '20px'}}to="/FindDoctor"> Find a Doctor</Link>
-<hr/>
+
 <Link style={{color: ' white ', margin: '20px'}}to="/FindHospital<">Find a Hospital</Link>
 <Link style={{color: 'white', margin: '20px'}}to="/health ">Health A-Z</Link>
 
-{/* <Link style={{color: 'white', margin: '20px'}}to="/" onClick={logout}>Logout</Link> */}
+<Link style={{color: 'white', margin: '20px'}}to="/SignIn" >Signin</Link>
 
           </Nav>
     

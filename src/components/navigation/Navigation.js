@@ -11,6 +11,7 @@ import {
 import Messages from '../../screens/Messages';
 import Message from '../../screens/Message';
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
+import { LoginForm } from "./login-form/LoginForm";
 
 export const Navigation = () => (
   
@@ -23,7 +24,12 @@ export const Navigation = () => (
         path="/"
         component={TitleScreen}
       />
-
+      <ConnectedRoute
+        exact
+        path="/login"
+        redirectIfAuthenticated
+        component={LoginForm}
+      />
       
       <ConnectedRoute
         exact
@@ -51,7 +57,7 @@ export const Navigation = () => (
       />
       <ConnectedRoute
         exact
-        path="/signup"
+        path="/SignIn"
         component={Signup}
       />
        <ConnectedRoute 

@@ -61,3 +61,5 @@ export const LoginForm = ({ login }) => {
     </React.Fragment>
   );
 };
+
+export default LoginForm;
