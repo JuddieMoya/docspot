@@ -24,10 +24,10 @@ export const Navigation = () => (
         path="/"
         component={TitleScreen}
       />
- <ConnectedRoute
+      <ConnectedRoute
         exact
         path="/login"
-      
+        redirectIfAuthenticated
         component={LoginForm}
       />
       
