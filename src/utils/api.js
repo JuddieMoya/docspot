@@ -104,10 +104,7 @@ class API {
       throw err;
     }
   }
-
-
-
-
+  
   async fetchUsername() {
     try {
       const res = await this.axiosInstance.delete(`/profile/`);
