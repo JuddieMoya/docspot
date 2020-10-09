@@ -9,7 +9,7 @@ class API {
       https://create-react-app.dev/docs/adding-custom-environment-variables/
     */
     const axiosInstance = axios.create({
-      baseURL: "https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?",
+      baseURL: "https://kwitter-api.herokuapp.com/docs/?",
       timeout: 30000,
       headers: {
         Authorization: `Bearer ${getToken()}`
