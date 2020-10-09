@@ -65,10 +65,11 @@ export const Signup = () => {
           <br />
         <button style={{backgroundColor: 'grey',color:'white'}} type="submit">Submit</button>
         {errorMessage}
-        <button style={{backgroundColor: 'grey',margin: '5px'}}><Link  style={{color: 'white'}} to="/">Back to Login</Link></button>
+        <button style={{backgroundColor: 'grey',margin: '5px'}}><Link  style={{color: 'white'}} to="/login">Back to Login</Link></button>
       </form>
     </>
 
   );
 };
 
+export default Signup;

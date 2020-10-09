@@ -9,7 +9,7 @@ class API {
       https://create-react-app.dev/docs/adding-custom-environment-variables/
     */
     const axiosInstance = axios.create({
-      baseURL: "https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?",
+      baseURL: "https://kwitter-api.herokuapp.com/docs/?",
       timeout: 30000,
       headers: {
         Authorization: `Bearer ${getToken()}`
@@ -131,6 +131,22 @@ class API {
     } catch (err) {
       helpMeInstructor(err);
       console.log(err);
+      throw err;
+    }
+  }
+
+  async getMessageList ({ limit, offset }) {
+    try {
+      const result = await this.axiosInstance.get(
+        "/messages?limit=" + limit + "&offset=" + offset,
+        {
+          limit,
+          offset,
+        }
+      );
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
       throw err;
     }
   }
