@@ -41,5 +41,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ruthhall97/kapstone-1.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ruthhall97/kapstone-1.0/issues"
+  },
+  "homepage": "https://gitlab.com/ruthhall97/kapstone-1.0#readme",
+  "description": ""
 }
