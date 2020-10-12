@@ -1,5 +1,5 @@
 
-import React from "react";
+
 
 import React, { useState } from "react";
 import { Provider } from "react-redux";
@@ -16,7 +16,7 @@ const DocSpot = {
 
 window.DocSpot = DocSpot;
 
-export const App = () => (
+ const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <Navigation />
@@ -24,3 +24,4 @@ export const App = () => (
   </Provider>
 );
 
+export default App;

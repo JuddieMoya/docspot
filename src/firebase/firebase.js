@@ -1,9 +1,9 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/analytics'
+// import 'firebase/analytics'
 
 
-export const App  = (firebase.initializeApp)({
+const app  = (firebase.initializeApp)({
     apiKey: "AIzaSyCZkdh88GpxA2Snpw4jITrf28GEigELVeA",
     authDomain: "kapstone-n.firebaseapp.com",
     databaseURL: "https://kapstone-n.firebaseio.com",
@@ -14,6 +14,6 @@ export const App  = (firebase.initializeApp)({
     measurementId: "G-EELYLHGD70"
   });
 
-  firebase.analytics();
+  // firebase.analytics();
 
-  export default App;
+  export default app;

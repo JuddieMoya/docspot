@@ -58,7 +58,7 @@ export const Navigation = () => (
       <ConnectedRoute
         exact
         path="/Health"
-        component={Health}
+        component={''}
       />
       <ConnectedRoute
         exact
