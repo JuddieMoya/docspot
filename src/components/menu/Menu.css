@@ -16,9 +16,14 @@
   text-decoration: underline;
   cursor: pointer;
 }
-button.DocSpot-button{
-  position: relative;
+.DocSpot{
   top:50px;
   left: 10px;
   border-radius: 1%;
+  text-align: left;
+  font-size: 25px;
+  width: 125px;
+  height: 80px;
+  background-color: Black
 }
+

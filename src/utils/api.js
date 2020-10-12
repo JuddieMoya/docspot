@@ -104,10 +104,7 @@ class API {
       throw err;
     }
   }
-
-
-
-
+  
   async fetchUsername() {
     try {
       const res = await this.axiosInstance.delete(`/profile/`);
@@ -134,6 +131,22 @@ class API {
     } catch (err) {
       helpMeInstructor(err);
       console.log(err);
+      throw err;
+    }
+  }
+
+  async getMessageList ({ limit, offset }) {
+    try {
+      const result = await this.axiosInstance.get(
+        "/messages?limit=" + limit + "&offset=" + offset,
+        {
+          limit,
+          offset,
+        }
+      );
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
       throw err;
     }
   }

@@ -52,6 +52,8 @@ Object.keys(_Messages).forEach(function (key) {
   });
 });
 
+var _Signup = require("./")
+
 var _Signup = require("./Signup");
 
 Object.keys(_Signup).forEach(function (key) {
