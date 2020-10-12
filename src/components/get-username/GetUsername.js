@@ -14,7 +14,6 @@ export const GetUsername = () => {
     }, []);
     console.log(state)
     return(
-        
         <>
         {state.getUsername.currentUser&&(
         <div>
@@ -25,8 +24,6 @@ export const GetUsername = () => {
         />
         </div>
         )}
-        
-        
         </>
     )
 
