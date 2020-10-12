@@ -31,8 +31,6 @@ export const messagesReducer = (state = INITIALSTATE, action) => {
       return{
         ...INITIALSTATE,
         messages: [action.payload, ...state.messages]
-        
-        
       }
     default:
       return state;

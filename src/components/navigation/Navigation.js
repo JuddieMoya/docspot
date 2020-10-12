@@ -57,14 +57,20 @@ export const Navigation = () => (
       />
       <ConnectedRoute
         exact
+        path="/Health"
+        component={Health}
+      />
+      <ConnectedRoute
+        exact
         path="/SignIn"
         component={Signup}
       />
-       <ConnectedRoute 
+      <ConnectedRoute 
         exact
         isProtected
         path="/getusers"
-        component={GetUsersScreen}/>
+        component={GetUsersScreen}
+      />
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
