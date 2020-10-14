@@ -6,17 +6,15 @@ import {
   HomeScreen,
   ProfileScreen,
   NotFoundScreen,
-  Signup,GetUsersScreen,
+  SignUp,
+  GetUsersScreen,
 } from "../../screens";
 import Messages from '../../screens/Messages';
 import Message from '../../screens/Message';
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
-import { LoginForm } from "./login-form/LoginForm";
 
 export const Navigation = () => (
-  
   <>
-  
   <BrowserRouter>
     <Switch>
     <ConnectedRoute
@@ -24,13 +22,6 @@ export const Navigation = () => (
         path="/"
         component={TitleScreen}
       />
-      <ConnectedRoute
-        exact
-        path="/login"
-        redirectIfAuthenticated
-        component={LoginForm}
-      />
-      
       <ConnectedRoute
         exact
         path="/"
@@ -57,13 +48,8 @@ export const Navigation = () => (
       />
       <ConnectedRoute
         exact
-        path="/Health"
-        component={Health}
-      />
-      <ConnectedRoute
-        exact
-        path="/SignIn"
-        component={Signup}
+        path="/SignUp"
+        component={SignUp}
       />
       <ConnectedRoute 
         exact
@@ -74,7 +60,6 @@ export const Navigation = () => (
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
- 
   </>
 );
 

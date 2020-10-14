@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,9 +6,9 @@ import "./Menu.css";
 import {Card, Nav} from 'react-bootstrap'
 
 export const Menu = () => {
-  const isAuthenticated = useSelector((state) => !!state.auth.isAuthenticated);
+  // const isAuthenticated = useSelector((state) => !!state.auth.isAuthenticated);
   const dispatch = useDispatch();
-  const logout = () => dispatch(actions.logout());
+  // const logout = () => dispatch(actions.logout());
   return (
     <Card id="menu">
       <button className='DocSpot'>
@@ -18,17 +17,15 @@ export const Menu = () => {
       <Card.Title id= 'menu-title'
       style={{fontSize: '45px',
               textAlign: 'left'
-           
       }}>
         </Card.Title>
       <div id="menu-links"> 
         <Nav>
-          <Link style={{color: ' white ', margin: '20px'}}to="/FindHospital<">Find a Hospital</Link>
+          <Link style={{color: ' white ', margin: '20px'}}to="/FindHospital">Find a Hospital</Link>
           <Link style={{color: 'white', margin: '20px'}}to="/health">Health A-Z</Link>
-          <Link style={{color: 'white', margin: '20px'}}to="/SignIn" >Signin</Link>
+          <Link style={{color: 'white', margin: '20px'}}to="/SignUp">Login/Sign up</Link>
         </Nav>
       </div>
     </Card>
   );
 };
-
