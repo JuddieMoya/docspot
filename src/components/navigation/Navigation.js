@@ -6,14 +6,13 @@ import {
   HomeScreen,
   ProfileScreen,
   NotFoundScreen,
-  Signup,
-  HealthScreen,
+  SignUp,
+  LoginForm,
   GetUsersScreen,
 } from "../../screens";
 import Messages from '../../screens/Messages';
 import Message from '../../screens/Message';
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
-import { LoginForm } from "./login-form/LoginForm";
 
 export const Navigation = () => (
   <>
@@ -26,7 +25,7 @@ export const Navigation = () => (
       />
       <ConnectedRoute
         exact
-        path="/login"
+        path="/LoginForm"
         redirectIfAuthenticated
         component={LoginForm}
       />
@@ -57,13 +56,8 @@ export const Navigation = () => (
       />
       <ConnectedRoute
         exact
-        path="/Health"
-        component={HealthScreen}
-      />
-      <ConnectedRoute
-        exact
-        path="/SignIn"
-        component={Signup}
+        path="/SignUp"
+        component={SignUp}
       />
       <ConnectedRoute 
         exact

@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { Navigation } from "./components";
 import configureStore from "./redux/configureStore";
-import app from "./firebase/firebase";
-// import React, { useEffect, useState } from "react";
-
 
 const { store, persistor } = configureStore();
 
