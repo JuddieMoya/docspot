@@ -7,7 +7,6 @@ import {
   ProfileScreen,
   NotFoundScreen,
   SignUp,
-  LoginForm,
   GetUsersScreen,
 } from "../../screens";
 import Messages from '../../screens/Messages';
@@ -23,13 +22,6 @@ export const Navigation = () => (
         path="/"
         component={TitleScreen}
       />
-      <ConnectedRoute
-        exact
-        path="/LoginForm"
-        redirectIfAuthenticated
-        component={LoginForm}
-      />
-      
       <ConnectedRoute
         exact
         path="/"

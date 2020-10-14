@@ -6,4 +6,3 @@ export * from "./Signup";
 export * from "./GetUsers"
 export * from "./Message";
 export * from "./TitleScreen";
-export * from "./LoginForm";
